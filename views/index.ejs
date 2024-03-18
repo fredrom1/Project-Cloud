@@ -1,0 +1,30 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Attractions</h1>
+        <ul>
+            <% attractions.forEach(function(attraction) { %>
+                <li>
+                    <div class="info">
+                        <h2><%= attraction.name %></h2>
+                        <p><%= attraction.detail %></p>
+                        <div class="image">
+                            <img src="<%= attraction.coverimage %>" alt="<%= attraction.name %> Image" width="300">
+                        </div>
+                        <p>Latitude: <%= attraction.latitude %>, Longitude: <%= attraction.longitude %></p>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
