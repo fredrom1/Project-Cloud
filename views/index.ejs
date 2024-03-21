@@ -16,11 +16,12 @@
                 <li>
                     <div class="info">
                         <h2><%= attraction.name %></h2>
-                        <p><%= attraction.detail %></p>
                         <div class="image">
                             <img src="<%= attraction.coverimage %>" alt="<%= attraction.name %> Image" width="300">
                         </div>
                         <p>Latitude: <%= attraction.latitude %>, Longitude: <%= attraction.longitude %></p>
+                        <!-- เพิ่มปุ่ม Learn More -->
+                        <a href="/attraction/<%= attraction.id %>" class="btn-learn-more">Learn More</a>
                     </div>
                 </li>
             <% }); %>

@@ -31,6 +31,24 @@ app.get('/', function(req, res, next){
     });
 });
 
+function getAttractionById(attractionId, callback) {
+    // Query to get attraction details by ID
+    pool.query('SELECT * FROM attractions WHERE id = ?', [attractionId], function(err, results) {
+        if (err) throw err;
+        // Call the callback function with the attraction data
+        callback(results[0]);
+    });
+}
+
+app.get('/attraction/:id', (req, res) => {
+    const attractionId = req.params.id;
+    // Call getAttractionById function with the attractionId
+    getAttractionById(attractionId, function(attraction) {
+        res.render('attraction', { attraction });
+    });
+});
+
+
 app.listen(3000, function() {
     console.log('web server listening on port 3000');
 });

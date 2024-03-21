@@ -1,0 +1,25 @@
+<!-- views/attraction.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attraction Details</title>
+    <link rel="stylesheet" href="/css/attraction.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Attraction Details</h1>
+        <div class="attraction-details">
+            <h2><%= attraction.name %></h2>
+            <div class="image" style="text-align: center;">
+                <img src="<%= attraction.coverimage %>" alt="<%= attraction.name %> Image" width="400">
+            </div>
+            <p><%= attraction.detail %></p>
+            <p>Location: Latitude <%= attraction.latitude %>, Longitude <%= attraction.longitude %></p>
+        </div>
+        <a href="/" class="btn-back">Back to List</a>
+    </div>
+</body>
+</html>
